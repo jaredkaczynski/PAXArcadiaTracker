@@ -51,7 +51,7 @@ table {
 @supports ((position: -webkit-sticky) or (position: sticky)) {
   .sidebar-sticky {
     position: -webkit-sticky;
-    position: sticky;
+    /*position: sticky;*/
   }
 }
 
