@@ -1,22 +1,27 @@
-<h1>Statistics#get</h1>
-<p>Find me in app/views/statistics/get.html.erb</p>
+<div class="row justify-content-center text-white">
+  <h1>PAX XP Arcadia Tracker</h1>
+</div>
+<div class="row justify-content-center text-white">
+  <p>Simple tracker to see who's completed it fastest</p>
+</div>
+<div class="card row col-md-10 offset-md-1"><!-- you can use column classes md-3,md-5 as per your table width -->
+    <table id='employee-table' class="table table-hover">
+      <thead class="thead-light">
+      <tr>
+        <th>Username</th>
+        <th>Time Taken</th>
+        <th>Time Completed</th>
+      </tr>
+      </thead>
 
-<table id='employee-table' class="table table-hover">
-  <thead class="thead-light">
-  <tr>
-    <th>Username</th>
-    <th>Time Taken</th>
-    <th>Time Completed</th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <% @players.each do |player| %>
-    <tr>
-      <td><%= player.username %></td>
-      <td><%= player.time_taken %></td>
-      <td><%= player.time_completed %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+      <tbody>
+      <% @players.each do |player| %>
+        <tr>
+          <td><%= player.username %></td>
+          <td><%= player.time_taken %></td>
+          <td><%= player.time_completed %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+</div>
