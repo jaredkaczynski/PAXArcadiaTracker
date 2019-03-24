@@ -6,19 +6,22 @@
 
 <div class="row pt-3">
   <div class="col-md-12">
-    <div class="card">
-      <div class="card-body">
-        <canvas id="chLine" height="100"></canvas>
+    <div class="row justify-content-start pb-2">
+      <h3 class="paxred">Completion Speed Over Time</h3>
+    </div>
+      <div class="card">
+        <div class="card-body">
+          <canvas id="chLine" height="100"></canvas>
+        </div>
       </div>
     </div>
-  </div>
 </div>
 
 <script>
     /* chart.js chart examples */
 
     // chart colors
-    var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
+    var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
 
     /* large line chart */
     var chLine = document.getElementById("chLine");
