@@ -1,5 +1,10 @@
 class StatisticsController < ApplicationController
-  def get
+  def home
+    unsorted = Player.all
+    @players = unsorted.sort_by &:time_taken
+  end
+
+  def charts
     unsorted = Player.all
     @players = unsorted.sort_by &:time_taken
   end
