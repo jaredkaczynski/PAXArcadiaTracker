@@ -14,5 +14,8 @@
 //= require turbolinks
 //= require jquery3
 //= require popper
+//= require tether
 //= require bootstrap
+//= require jquery.dataTables.min.js
+//= require dataTables.bootstrap4.min.js
 //= require_tree .
