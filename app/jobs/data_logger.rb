@@ -38,7 +38,9 @@ module PAXArcadiaTracker
             new_player.time_completed = Time.now
             new_player.time_taken = player.css('td')[3].text.delete(" \n")
             new_player.username = player.css('td')[1].css('a').text.delete(" \n")
-            new_player.save
+            unless Player.find_by(time_taken: new_player.time_taken, username: new_player.username)
+              new_player.save
+            end
           end
         end
         #Reset last to current if there were changes
