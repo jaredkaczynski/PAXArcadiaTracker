@@ -1,2 +1,22 @@
 <h1>Statistics#get</h1>
 <p>Find me in app/views/statistics/get.html.erb</p>
+
+<table id='employee-table' class="table table-hover">
+  <thead class="thead-light">
+  <tr>
+    <th>Username</th>
+    <th>Time Taken</th>
+    <th>Time Completed</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @players.each do |player| %>
+    <tr>
+      <td><%= player.username %></td>
+      <td><%= player.time_taken %></td>
+      <td><%= player.time_completed %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

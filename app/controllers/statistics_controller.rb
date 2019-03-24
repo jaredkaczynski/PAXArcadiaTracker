@@ -1,5 +1,5 @@
 class StatisticsController < ApplicationController
-  def show
+  def get
     @players = Player.all
   end
 end

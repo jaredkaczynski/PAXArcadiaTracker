@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'statistics/show'
+  get 'statistics/get'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'statistics#show'
+  root 'statistics#get'
 end
