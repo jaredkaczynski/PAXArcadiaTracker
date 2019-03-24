@@ -18,7 +18,7 @@
       <% @players.each do |player| %>
         <tr>
           <td><%= player.username %></td>
-          <td><%= player.time_taken %></td>
+          <td><%= formatted_duration(player.time_taken) %></td>
           <td><%= player.time_completed %></td>
         </tr>
       <% end %>

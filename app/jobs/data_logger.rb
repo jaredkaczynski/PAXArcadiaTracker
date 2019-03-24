@@ -3,7 +3,6 @@ require 'nokogiri'
 
 module PAXArcadiaTracker
   class DataLogger
-
     def start_logging
       @last_table = []
       Thread.new do
@@ -36,7 +35,8 @@ module PAXArcadiaTracker
           unless @last_table.include? string_player
             new_player = Player.new
             new_player.time_completed = Time.now
-            new_player.time_taken = player.css('td')[3].text.delete(" \n")
+            #new_player.time_taken = player.css('td')[3].text.delete(",")
+            new_player.time_taken = player.css('td')[3].text.delete(",").delete("\n").to_i / 604800
             new_player.username = player.css('td')[1].css('a').text.delete(" \n")
             unless Player.find_by(time_taken: new_player.time_taken, username: new_player.username)
               new_player.save
