@@ -19,15 +19,19 @@
       </svg>
       <div class="sidebar-sticky">
         <h1 class="logo text-white text-center">XP Arcadia</h1>
-        <ul class="nav flex-column">
+        <ul class="nav flex-column pt-1">
           <li class="nav-item
             <% if controller.controller_name == "statistics" && controller.action_name == "home" %>active
             <% end %>">
             <a class="nav-link
               <% if controller.controller_name == "statistics" && controller.action_name == "home" %>active
-              <% end %>" href="#">
+              <% end %>" href="
+              <% if controller.controller_name == "statistics" && controller.action_name == "home" %>#
+              <% else %>
+              /home
+              <% end %>">
               <span data-feather="home"></span>
-              Dashboard <span class="sr-only">(current)</span>
+              Leaderboard <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item
@@ -35,7 +39,11 @@
             <% end %>">
             <a class="nav-link
               <% if controller.controller_name == "statistics" && controller.action_name == "charts" %>active
-              <% end %>" href="#">
+              <% end %>" href="
+              <% if controller.controller_name == "statistics" && controller.action_name == "charts" %>#
+              <% else %>
+              /charts
+              <% end %>">
               <span data-feather="charts"></span>
               Charts <span class="sr-only">(current)</span>
             </a>
