@@ -19,8 +19,8 @@
       <% @players.each do |player| %>
         <tr>
           <td><%= player.username %></td>
-          <td><%= formatted_duration(player.time_taken) %></td>
-          <td><%= player.time_completed %></td>
+          <td data-sort="<%= player.time_taken %>"><%= formatted_duration(player.time_taken) %></td>
+          <td data-sort="<%= player.time_completed.to_i %>"><%= player.time_completed %></td>
         </tr>
       <% end %>
       </tbody>
@@ -30,6 +30,12 @@
 
 <script>
     $(document).ready(function() {
-        $('#players').DataTable();
+        $('#players').DataTable( {
+            "columns": [
+                null,
+                { "orderDataType": "dom-text" },
+                { "orderDataType": "dom-text", "type": "numeric" },
+            ]
+        } );
     } );
 </script>
