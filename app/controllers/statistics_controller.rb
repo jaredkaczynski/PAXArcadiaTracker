@@ -1,6 +1,7 @@
 class StatisticsController < ApplicationController
   def get
-    @players = Player.all
+    unsorted = Player.all
+    @players = unsorted.sort_by &:time_taken
   end
 
   helper_method :formatted_duration
