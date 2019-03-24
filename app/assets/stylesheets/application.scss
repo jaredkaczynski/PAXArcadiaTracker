@@ -29,13 +29,13 @@ table {
  */
 
 .sidebar {
-  background: #d9272d;
+  /*background: #d9272d;*/
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   z-index: 100; /* Behind the navbar */
-  padding: 48px 0 0; /* Height of navbar */
+  padding: 20px 0 0; /* Height of navbar */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
 
@@ -81,4 +81,11 @@ table {
 
 .paxred{
   color: #d9272d;
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }
