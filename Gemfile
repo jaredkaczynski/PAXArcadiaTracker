@@ -28,10 +28,15 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.1', require: false
-
+#Bootstrap
 gem 'bootstrap'
+#Required for Bootstrap
 gem 'jquery-rails'
+#Required for Bootstrap
 gem 'tether-rails'
+# Add chart js
+gem 'chartjs-ror'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
