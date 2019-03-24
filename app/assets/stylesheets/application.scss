@@ -16,7 +16,8 @@
 @import "dataTables.bootstrap4.min";
 
 body {
-  font-family: "univia-pro", Helvetica, sans-serif;
+  background: whitesmoke;
+  font-family: 'Open Sans', sans-serif;
 }
 
 table {
@@ -76,4 +77,8 @@ table {
 .sidebar-heading {
   font-size: .75rem;
   text-transform: uppercase;
+}
+
+.paxred{
+  color: #d9272d;
 }

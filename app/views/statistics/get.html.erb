@@ -1,13 +1,15 @@
-<div class="row justify-content-center text-white">
-  <h1>PAX XP Arcadia Tracker</h1>
-</div>
-<div class="row justify-content-center text-white">
-  <p>Simple tracker to see who's completed it fastest</p>
+<div class="paxred border-bottom">
+  <div class="row justify-content-start">
+    <h1>PAX XP Arcadia Tracker</h1>
+  </div>
+  <div class="row justify-content-start">
+    <p>Simple tracker to see who's completed it fastest</p>
+  </div>
 </div>
 
-<div class="card row col-md-10 offset-md-1">
+<div class="row">
   <div class="table-responsive">
-    <table id="players"  class="table table-bordered">
+    <table id="players" class="table table-bordered">
       <thead>
       <tr>
         <th>Username</th>
@@ -29,13 +31,14 @@
 </div>
 
 <script>
-    $(document).ready(function() {
-        $('#players').DataTable( {
+    $(document).ready(function () {
+        $('#players').DataTable({
+            "iDisplayLength": 50,
             "columns": [
                 null,
-                { "orderDataType": "dom-text" },
-                { "orderDataType": "dom-text", "type": "numeric" },
+                {"orderDataType": "dom-text"},
+                {"orderDataType": "dom-text", "type": "numeric"},
             ]
-        } );
-    } );
+        });
+    });
 </script>
