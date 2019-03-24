@@ -23,7 +23,7 @@ module PAXArcadiaTracker
         uri = URI('https://secure.runescape.com/m=hiscore_oldschool/overall.ws')
         page = Net::HTTP.get(uri)
         parsed_page = Nokogiri::HTML(page)
-        table = parsed_page.css("div#contentHiscores tbody tr.personal-hiscores__row")
+        table = parsed_page.css("tbody tr.personal-hiscores__row")
         table.each do |player|
           string_player = player.text.tr("\n", "")
           #temp_player = Player.new
