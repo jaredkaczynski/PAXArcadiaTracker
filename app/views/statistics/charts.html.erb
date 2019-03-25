@@ -6,27 +6,43 @@
 
 <div class="row pt-3">
   <div class="col-md-12">
-    <div class="row justify-content-start pb-2">
-      <h3 class="paxred">Completion Speed Over Time</h3>
-    </div>
-      <div class="card">
-        <div class="card-body">
-          <canvas id="chLine" height="100"></canvas>
-        </div>
+    <div class="card">
+      <h3 class="paxred py-2 pl-2">Completion Speed Over Time</h3>
+      <div class="card-body">
+        <canvas id="completionSpeed" height="100"></canvas>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row pt-3">
+  <div class="col-md-12">
+      <div class="card-columns d-flex justify-content-between">
+        <div class="card col-md-5">
+          <h4 class="paxred py-2 pl-2">Total Completions</h4>
+          <div class="card-body">
+            <canvas id="totalCompleted" height="100"></canvas>
+          </div>
+        </div>
+        <div class="card col-md-5">
+          <h4 class="paxred py-2 pl-2">Total Completions</h4>
+          <div class="card-body">
+            <canvas id="totalCompleted" height="100"></canvas>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
 
 <script>
     /* chart.js chart examples */
 
     // chart colors
-    var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
+    var colors = ['#d9272d'];
 
     /* large line chart */
-    var chLine = document.getElementById("chLine");
+    var chLine = document.getElementById("completionSpeed");
     var chartData = {
-        labels: ["S", "M", "T", "W", "T", "F", "S"],
         datasets: [{
             data: [<%= @data %>],
             backgroundColor: 'transparent',
@@ -44,8 +60,46 @@
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero: false
+                            beginAtZero: true
                         }
+                    }],
+                    xAxes: [{
+                        type: 'linear',
+                        position: 'bottom'
+                    }]
+                },
+                legend: {
+                    display: false
+                }
+            }
+        });
+    }
+
+    var totalComplete = document.getElementById("totalCompleted");
+    var chartData2 = {
+        datasets: [{
+            data: [<%= @data_total_completions %>],
+            backgroundColor: 'transparent',
+            borderColor: colors[0],
+            borderWidth: 4,
+            pointBackgroundColor: colors[0]
+        }]
+    };
+
+    if (totalComplete) {
+        new Chart(totalComplete, {
+            type: 'scatter',
+            data: chartData2,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    xAxes: [{
+                        type: 'linear',
+                        position: 'bottom'
                     }]
                 },
                 legend: {
