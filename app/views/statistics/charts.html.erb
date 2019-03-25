@@ -6,7 +6,7 @@
 
 <div class="row pt-3">
   <div class="col-md-12">
-    <div class="card">
+    <div class="card pl-2 pb-2">
       <h3 class="paxred py-2 pl-2">Completion Speed Over Time</h3>
       <div class="card-body">
         <canvas id="completionSpeed" height="100"></canvas>
@@ -18,7 +18,7 @@
 <div class="row pt-3">
   <div class="col-md-12">
       <div class="card-columns d-flex justify-content-between">
-        <div class="card col-md-5">
+        <div class="card pl-2 pb-2 col-md-5">
           <h4 class="paxred py-2 pl-2">Total Completions</h4>
           <div class="card-body">
             <canvas id="totalCompleted" height="100"></canvas>
@@ -61,12 +61,20 @@
                     yAxes: [{
                         ticks: {
                             beginAtZero: true
-                        }
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Minutes To Complete",
+                        },
                     }],
                     xAxes: [{
                         type: 'linear',
-                        position: 'bottom'
-                    }]
+                        position: 'bottom',
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Hours Since Event Start",
+                        },
+                    }],
                 },
                 legend: {
                     display: false
@@ -95,11 +103,19 @@
                     yAxes: [{
                         ticks: {
                             beginAtZero: true
-                        }
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Total Completions",
+                        },
                     }],
                     xAxes: [{
                         type: 'linear',
-                        position: 'bottom'
+                        position: 'bottom',
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Hours Since Event Start",
+                        },
                     }]
                 },
                 legend: {
